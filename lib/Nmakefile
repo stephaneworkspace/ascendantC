@@ -1,0 +1,12 @@
+
+asc.exe: asc.obj
+	cl asc.obj
+
+asc.obj: asc.c
+	cl /c asc.c
+
+dll: asc.obj
+	cl /LD asc.obj /link /out:..\ascendant.dll /DEF:asc.def
+
+clean:
+	rm asc.obj asc.lib asc.exp ..\ascendant.dll
